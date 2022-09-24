@@ -1,0 +1,6 @@
+visical:
+  Gripper_controller:
+    type: "position_controllers/JointGroupPositionController"
+    joints:
+      - Rev9
+      - Rev10
