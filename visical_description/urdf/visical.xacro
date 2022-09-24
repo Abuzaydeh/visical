@@ -256,6 +256,15 @@
   </collision>
 </link>
 
+<link name="camera_link_optical"></link>
+
+<joint name="camera_optical_joint" type="fixed">
+  <origin xyz="-0.013 0 0.0075" rpy="0 ${-pi/2} 0"/>
+  <parent link="camera_1"/>
+  <child link="camera_link_optical"/>
+</joint>
+
+
 <link name="lidar_1">
   <inertial>
     <origin xyz="0.0 -3.115327511687561e-18 0.015000000000000013" rpy="0 0 0"/>
@@ -295,14 +304,14 @@
   <origin xyz="0.275 -0.275 0.1" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="left_front_wheel_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="Rev4" type="continuous">
   <origin xyz="-0.275 -0.275 0.1" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="left_back_wheel_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="Rev5" type="continuous">
@@ -358,5 +367,11 @@
   <parent link="base_link"/>
   <child link="lidar_1"/>
 </joint>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/visical</robotNamespace>
+    </plugin>
+</gazebo>
 
 </robot>
