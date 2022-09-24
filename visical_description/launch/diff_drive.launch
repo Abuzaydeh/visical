@@ -2,7 +2,7 @@
 
 <rosparam file="$(find visical_description)/launch/diff_drive.yaml" command="load"/>
 <rosparam file="$(find visical_description)/launch/joint_state.yaml" command="load"/>
-<node name="diff_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/visical" args="diff_drive_controller joint_state_controller "/>
+<node name="diff_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="visical" args="diff_drive_controller joint_state_controller "/>
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
 </node>
 
